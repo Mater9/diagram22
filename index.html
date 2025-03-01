@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Positioning Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <canvas id="brandPositioningChart" width="800" height="500"></canvas>
+
+    <script>
+      const ctx = document
+        .getElementById("brandPositioningChart")
+        .getContext("2d");
+
+      new Chart(ctx, {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              label: "McDonald's",
+              data: [{ x: 2, y: 3 }],
+              backgroundColor: "red",
+              pointRadius: 8,
+            },
+            {
+              label: "Burger King",
+              data: [{ x: 3, y: 3.5 }],
+              backgroundColor: "blue",
+              pointRadius: 8,
+            },
+            {
+              label: "Pasibus",
+              data: [{ x: 4, y: 4.5 }],
+              backgroundColor: "green",
+              pointRadius: 10,
+            },
+            {
+              label: "Five Guys",
+              data: [{ x: 5, y: 4.8 }],
+              backgroundColor: "orange",
+              pointRadius: 10,
+            },
+            {
+              label: "Local Gourmet Brand",
+              data: [{ x: 4.5, y: 4.2 }],
+              backgroundColor: "purple",
+              pointRadius: 9,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "Brand Positioning Map: Burger Chains in Poland",
+              font: {
+                size: 18,
+              },
+            },
+            legend: {
+              display: true,
+              position: "bottom",
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Price (Low to High)",
+              },
+              min: 1,
+              max: 6,
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Quality (Low to High)",
+              },
+              min: 1,
+              max: 5,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
